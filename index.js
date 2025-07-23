@@ -22,7 +22,7 @@ function addGoal() {
 }
 
 function addMoney(goalId) {
-  const input = document.getElementById(amount-${goalId});
+  const input = document.getElementById(`amount-${goalId}`);
   const amount = parseInt(input.value);
   if (isNaN(amount) || amount <= 0) {
     alert("Enter a valid amount to save.");
@@ -65,7 +65,7 @@ function renderGoals() {
 
           ${
             goal.saved >= goal.target
-              ? <div class="celebration">🎉 Hooray! ${goal.avatar} saved enough for <strong>${goal.name}</strong>!</div>
+              ? `<div class="celebration">🎉 Hooray! ${goal.avatar} saved enough for <strong>${goal.name}</strong>!</div>`
               : `
               <div class="goal-input-container">
                 <input type="number" id="amount-${goal.id}" placeholder="➕ Add KSh..." />
